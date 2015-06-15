@@ -1,0 +1,16 @@
+__author__ = 'JasonChang'
+#Fibonacci Sequence - Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.
+
+def Fibonacci():
+    number = int(input("What number of fibonacci sequence?"))
+    fibonacci=[0,1]
+    prev = 0
+    current = 1
+    for count in range(number-2):
+        new_prev = current
+        current = prev + current
+        prev = new_prev
+        fibonacci.append(current)
+    return fibonacci
+
+print(Fibonacci())
