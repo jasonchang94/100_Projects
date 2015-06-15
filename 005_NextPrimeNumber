@@ -3,9 +3,8 @@ __author__ = 'JasonChang'
 
 def Prime():
     Count = 1
-    Number = 1
-    print("The %d prime number is: %d" % (Number, Count))
-    Continue = input("Do you want to continue (y/n): ")
+    Number = 0
+    Continue = 'y'
     if Continue == 'y':
         while Continue == 'y':
             primefound = 'n'
