@@ -1,22 +1,27 @@
 __author__ = 'JasonChang'
 # Next Prime Number - Have the program find prime numbers until the user chooses to stop asking for the next one.
+def Prime(Count,Number):
+    for i in range(2,Count,1):
+        if Count % i == 0:
+            return False
+    else:
+        primefound = True
+        print("The %d prime number is: %d" % (Number, Count))
+        return True
 
-def Prime():
+def FindPrime():
     Count = 1
     Number = 0
     Continue = 'y'
     if Continue == 'y':
         while Continue == 'y':
-            primefound = 'n'
-            while primefound == 'n':
-                for i in range(2,Count,1):
-                    if Count % i == 0:
-                        break
-                else:
-                    primefound = 'y'
+            primefound = False
+            while not primefound:
+                primecount = Prime(Count,Number)
+                if primecount == True:
                     Number+=1
-                    print("The %d prime number is: %d" % (Number, Count))
-
+                    Count+=1
+                    break
                 Count += 1
             Continue = input("Do you want to continue (y/n): ")
 
@@ -24,4 +29,4 @@ def Prime():
         print("Sorry you didn't do (y/n). Let's try again")
         Prime()
 
-Prime()
+FindPrime()
